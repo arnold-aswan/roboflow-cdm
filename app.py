@@ -202,7 +202,6 @@ def analyze():
     img_base64 = base64.b64encode(img_bytes).decode("utf-8")
 
     results = {
-        "results": {
             "detections": detections,
             "percentages": percentages,
             "total_percentage": round(total_percentage, 2),
@@ -211,8 +210,6 @@ def analyze():
             "image_dimensions": {"width": w, "height": h},
             "detection_count": len(detections),
             "min_area_guarantee": f"{MIN_PERCENTAGE}%"
-        },
-        "annotated_image": img_base64
     }
 
     return jsonify(results)
